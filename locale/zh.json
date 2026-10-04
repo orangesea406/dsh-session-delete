@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "删除会话（回收站）",
+    "description": "在会话行的「⋯」菜单里新增「删除会话」，把完整会话日志移入 <DSH home>/session-trash。仅处理已关闭的会话。"
+  }
+}

@@ -1,0 +1,16 @@
+# ============================================================================
+# dsh-session-delete —— DSH bundle patch
+# ============================================================================
+# 把本插件的 Host 行插入 profile 的配置树。Client 半边由 package.json 的
+# `dsh.client` 声明驱动，不需要在此处再写一行。
+#
+# 回收目录固定为 `<DSH home>/session-trash`：它是 sessions 根目录的同级目录，
+# 不在持久化扫描范围内。位置不可配置，避免误落到 sessions 根内造成
+# legacyLayout / encodingMismatch / assertStoredIdentity 冲突。
+#
+# 改这里之后需要重启 DSH（bundle patch 在启动时组合）。
+# ============================================================================
+
+- insert:
+    - id: dsh-session-delete
+      name: dsh-session-delete

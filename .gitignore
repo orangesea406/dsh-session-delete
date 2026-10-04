@@ -1,0 +1,17 @@
+# 依赖
+node_modules/
+
+# 测试临时数据（假 DSH home，绝不提交）
+.tmp-test/
+
+# 日志
+*.log
+
+# 运行数据（双保险：真实会话/回收数据不会出现在插件目录，仍显式忽略）
+sessions/
+storages/
+session-trash/
+
+# 环境与密钥
+.env
+.env.*

@@ -1,0 +1,42 @@
+{
+  "name": "dsh-session-delete",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Harness 插件：把已关闭（cold）会话的完整 artifact 移入 <DSH_HOME>/session-trash，使其从会话列表消失；运行中的会话会被拒绝。不修改 workspace.json、不移动投影缓存、不动附件。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "session",
+    "delete"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  },
+  "license": "MIT"
+}

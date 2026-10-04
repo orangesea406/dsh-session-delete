@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Delete session (to trash)",
+    "description": "Adds \"Delete session\" to the session row menu; moves the complete session log into <DSH home>/session-trash. Cold sessions only."
+  }
+}
